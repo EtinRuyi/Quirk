@@ -43,5 +43,45 @@ namespace Quirk.Controllers
             var tags = _quirkDbContext.Tags.ToList();
             return View(tags);
         }
+
+        [HttpGet]
+        public IActionResult Edit(string Id)
+        {
+
+            var tag = _quirkDbContext.Tags.FirstOrDefault(x => x.Id == Id);
+            if (tag != null)
+            {
+                var editTagReq = new EditTagRequest
+                {
+                    Id = tag.Id,
+                    Name = tag.Name,
+                    DisplayName = tag.DisplayName
+                };
+                return View(editTagReq);
+            }
+            return View(null);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(EditTagRequest editTagRequest)
+        {
+            var tag = new Tag
+            {
+                Id = editTagRequest.Id,
+                Name = editTagRequest.Name,
+                DisplayName = editTagRequest.DisplayName
+            };
+
+            var existingTag = _quirkDbContext.Tags.Find(tag.Id);
+            if (existingTag != null)
+            {
+                existingTag.Name = tag.Name;
+                existingTag.DisplayName = tag.DisplayName;
+
+                _quirkDbContext.SaveChanges();
+                return RedirectToAction("Edit", new { Id = editTagRequest.Id });
+            }
+            return RedirectToAction("Edit", new {Id = editTagRequest.Id});
+        }
     }
 }
