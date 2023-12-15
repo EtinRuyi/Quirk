@@ -1,17 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Quirk.Data;
 using Quirk.Models.Domain;
 using Quirk.Models.ViewModels;
+using Quirk.Repositories;
 
 namespace Quirk.Controllers
 {
     public class AdminTagsController : Controller
     {
-        private readonly QuirkDbContext _quirkDbContext;
-        public AdminTagsController(QuirkDbContext quirkDbContext)
+        private readonly ITagRepository _tagRepository;
+        public AdminTagsController(ITagRepository tagRepository)
         {
-            _quirkDbContext = quirkDbContext;
+            _tagRepository = tagRepository;
         }
 
 
@@ -31,9 +31,7 @@ namespace Quirk.Controllers
                 DisplayName = addTagRequest.DisplayName
             };
 
-            await _quirkDbContext.Tags.AddAsync(tag);
-            await _quirkDbContext.SaveChangesAsync();
-
+            await _tagRepository.AddAsync(tag);
             return RedirectToAction("List");
         }
 
@@ -41,7 +39,7 @@ namespace Quirk.Controllers
         [ActionName("List")]
         public async Task<IActionResult> List()
         {
-            var tags = await _quirkDbContext.Tags.ToListAsync();
+            var tags = await _tagRepository.GetAllAsync();
             return View(tags);
         }
 
@@ -49,7 +47,7 @@ namespace Quirk.Controllers
         public async Task<IActionResult> Edit(string Id)
         {
 
-            var tag = await _quirkDbContext.Tags.FirstOrDefaultAsync(x => x.Id == Id);
+            var tag = await _tagRepository.GetAsync(Id);
             if (tag != null)
             {
                 var editTagReq = new EditTagRequest
@@ -72,27 +70,24 @@ namespace Quirk.Controllers
                 Name = editTagRequest.Name,
                 DisplayName = editTagRequest.DisplayName
             };
-
-            var existingTag = await _quirkDbContext.Tags.FindAsync(tag.Id);
-            if (existingTag != null)
+            var updatedTag = await _tagRepository.UpdateAsync(tag);
+            if (updatedTag != null)
             {
-                existingTag.Name = tag.Name;
-                existingTag.DisplayName = tag.DisplayName;
 
-               await _quirkDbContext.SaveChangesAsync();
-                return RedirectToAction("Edit", new { Id = editTagRequest.Id });
             }
-            return RedirectToAction("Edit", new {Id = editTagRequest.Id});
+            else
+            {
+
+            }
+            return RedirectToAction("Edit", new {id = editTagRequest.Id});
         }
 
         [HttpPost]
         public async Task<IActionResult> Delete(EditTagRequest editTagRequest)
         {
-            var deleteTag = await _quirkDbContext.Tags.FindAsync(editTagRequest.Id);
-            if (deleteTag != null)
+            var deletedTag = await _tagRepository.DeleteAsync(editTagRequest.Id);
+            if (deletedTag != null)
             {
-                _quirkDbContext.Tags.Remove(deleteTag);
-                await _quirkDbContext.SaveChangesAsync();
                 return RedirectToAction("List");
             }
             return RedirectToAction("Edit", new { Id = editTagRequest.Id });

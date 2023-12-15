@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quirk.Data;
+using Quirk.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<QuirkDbContext>(options => 
 options.UseSqlServer(builder.Configuration.GetConnectionString("QuirkConnection")));
+builder.Services.AddScoped<ITagRepository, TagRepository >();
 
 var app = builder.Build();
 
