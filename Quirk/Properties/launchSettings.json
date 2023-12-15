@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "https": {
+    "Quirk": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
