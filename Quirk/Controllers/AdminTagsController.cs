@@ -83,5 +83,18 @@ namespace Quirk.Controllers
             }
             return RedirectToAction("Edit", new {Id = editTagRequest.Id});
         }
+
+        [HttpPost]
+        public IActionResult Delete(EditTagRequest editTagRequest)
+        {
+            var deleteTag = _quirkDbContext.Tags.Find(editTagRequest.Id);
+            if (deleteTag != null)
+            {
+                _quirkDbContext.Tags.Remove(deleteTag);
+                _quirkDbContext.SaveChanges();
+                return RedirectToAction("List");
+            }
+            return RedirectToAction("Edit", new { Id = editTagRequest.Id });
+        }
     }
 }
