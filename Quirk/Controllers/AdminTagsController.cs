@@ -33,7 +33,15 @@ namespace Quirk.Controllers
             _quirkDbContext.Tags.Add(tag);
             _quirkDbContext.SaveChanges();
 
-            return View("Add");
+            return RedirectToAction("List");
+        }
+
+        [HttpGet]
+        [ActionName("List")]
+        public IActionResult List()
+        {
+            var tags = _quirkDbContext.Tags.ToList();
+            return View(tags);
         }
     }
 }
