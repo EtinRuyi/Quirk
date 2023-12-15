@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using Quirk.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<QuirkDbContext>(options => 
+options.UseSqlServer(builder.Configuration.GetConnectionString("QuirkConnection")));
 
 var app = builder.Build();
 
