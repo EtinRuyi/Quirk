@@ -14,6 +14,6 @@ namespace Quirk.Models.ViewModels
         public string Author { get; set; }
         public bool Visible { get; set; }
         public IEnumerable<SelectListItem> Tags { get; set; }
-        public string SelectedTag { get; set; }
+        public string[] SelectedTags { get; set; } = Array.Empty<string>();
     }
 }

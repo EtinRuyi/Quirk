@@ -10,6 +10,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<QuirkDbContext>(options => 
 options.UseSqlServer(builder.Configuration.GetConnectionString("QuirkConnection")));
 builder.Services.AddScoped<ITagRepository, TagRepository >();
+builder.Services.AddScoped<IBlogPostRepository, BlogPostRepository >();
 
 var app = builder.Build();
 
