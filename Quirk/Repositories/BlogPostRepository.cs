@@ -28,9 +28,9 @@ namespace Quirk.Repositories
            return await _quirkDbContext.BlogPosts.Include(x => x.Tags).ToListAsync();
         }
 
-        public Task<BlogPost> GetAsync(string id)
+        public async Task<BlogPost> GetAsync(string id)
         {
-            throw new NotImplementedException();
+            return await _quirkDbContext.BlogPosts.Include(x => x.Tags).FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public Task<BlogPost> UpdateAsync(BlogPost blogPost)
