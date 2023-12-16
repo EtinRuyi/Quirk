@@ -18,9 +18,16 @@ namespace Quirk.Repositories
             return blogPost;
         }
 
-        public Task<BlogPost> DeleteAsync(string id)
+        public async Task<BlogPost> DeleteAsync(string id)
         {
-            throw new NotImplementedException();
+            var deletePost = await _quirkDbContext.BlogPosts.FindAsync(id);
+            if (deletePost != null)
+            {
+                _quirkDbContext.BlogPosts.Remove(deletePost);
+                await _quirkDbContext.SaveChangesAsync();
+                return deletePost;
+            }
+            return null;
         }
 
         public async Task<IEnumerable<BlogPost>> GetAllAsync()

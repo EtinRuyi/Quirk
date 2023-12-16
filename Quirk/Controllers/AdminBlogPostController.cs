@@ -133,5 +133,16 @@ namespace Quirk.Controllers
             }
             return RedirectToAction("Edit");
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(EditBlogPostRequest editBlogPostRequest)
+        {
+            var deletedBlog = await _blogPostRepository.DeleteAsync(editBlogPostRequest.Id);
+            if (deletedBlog != null) 
+            {
+                return RedirectToAction("List");
+            }
+            return RedirectToAction("Edit", new {id = editBlogPostRequest.Id});
+        }
     }
 }
