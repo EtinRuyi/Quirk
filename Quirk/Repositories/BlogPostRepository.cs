@@ -1,4 +1,5 @@
-﻿using Quirk.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Quirk.Data;
 using Quirk.Models.Domain;
 
 namespace Quirk.Repositories
@@ -22,9 +23,9 @@ namespace Quirk.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<BlogPost>> GetAllAsync()
+        public async Task<IEnumerable<BlogPost>> GetAllAsync()
         {
-            throw new NotImplementedException();
+           return await _quirkDbContext.BlogPosts.Include(x => x.Tags).ToListAsync();
         }
 
         public Task<BlogPost> GetAsync(string id)

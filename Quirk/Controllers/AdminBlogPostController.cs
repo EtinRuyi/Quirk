@@ -57,5 +57,12 @@ namespace Quirk.Controllers
             await _blogPostRepository.AddAsync(blogPost);
             return RedirectToAction("Add");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> List()
+        {
+            var blogPost = await _blogPostRepository.GetAllAsync();
+            return View(blogPost);
+        }
     }
 }
