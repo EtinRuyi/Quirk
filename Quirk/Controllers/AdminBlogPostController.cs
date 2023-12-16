@@ -96,5 +96,42 @@ namespace Quirk.Controllers
             
             return View(null);
         }
+
+        [HttpPost]
+        public async Task<IActionResult>Edit(EditBlogPostRequest editBlogPostRequest)
+        {
+            var blogPost = new BlogPost
+            {
+                Id = editBlogPostRequest.Id,
+                Heading = editBlogPostRequest.Heading,
+                PageTitle = editBlogPostRequest.PageTitle,
+                Content = editBlogPostRequest.Content,
+                Author = editBlogPostRequest.Author,
+                FeaturedImageUrl = editBlogPostRequest.FeaturedImageUrl,
+                UrlHandle = editBlogPostRequest.UrlHandle,
+                ShortDescription = editBlogPostRequest.ShortDescription,
+                PublishedDate = editBlogPostRequest.PublishedDate,
+                Visible = editBlogPostRequest.Visible,
+            };
+            var selectedTags = new List<Tag>();
+            foreach (var selectedTag in editBlogPostRequest.SelectedTags)
+            {
+                //if (Guid.TryParse(selectedTag, out var tag))
+                //{
+                    var foundTag = await _tagRepository.GetAsync(selectedTag);
+                    if (foundTag != null)
+                    {
+                        selectedTags.Add(foundTag);
+                    }
+                //}
+            }
+            blogPost.Tags = selectedTags;
+            var updatedBlog =  await _blogPostRepository.UpdateAsync(blogPost);
+            if (updatedBlog != null)
+            {
+                return RedirectToAction("Edit");
+            }
+            return RedirectToAction("Edit");
+        }
     }
 }
