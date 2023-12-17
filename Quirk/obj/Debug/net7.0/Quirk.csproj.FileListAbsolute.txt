@@ -73,3 +73,5 @@ C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\refint\Quirk.dll
 C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\Quirk.pdb
 C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\Quirk.genruntimeconfig.cache
 C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\ref\Quirk.dll
+C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\CloudinaryDotNet.dll
+C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Newtonsoft.Json.dll
