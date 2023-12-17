@@ -39,7 +39,7 @@
                 <input type="file" class="form-control" id="featuredImageUpload" @* asp-for="ShortDescription" *@ />
                 @if (Model.FeaturedImageUrl != null)
                 {
-                    <img src="" id="featuredImageDisplay" style="display: block; width: 300px;" />
+                    <img src="@Model.FeaturedImageUrl" id="featuredImageDisplay" style="display: block; width: 300px;" />
                 }
                 else
                 {
@@ -101,7 +101,9 @@
 
 @section Scripts{
     <script>
-        var editor = new FroalaEditor('#content')
+        var editor = new FroalaEditor('#content', {
+            imageUploadURL: '/api/images'
+        })
 
         const featuredUploadElement = document.getElementById('featuredImageUpload');
         const featuredImageUrlElement = document.getElementById('featuredImageUrl');
