@@ -40,6 +40,12 @@ namespace Quirk.Repositories
             return await _quirkDbContext.BlogPosts.Include(x => x.Tags).FirstOrDefaultAsync(x => x.Id == id);
         }
 
+        public async Task<BlogPost> GetByUrlAsync(string urlHandle)
+        {
+            return await _quirkDbContext.BlogPosts.Include(x => x.Tags)
+                .FirstOrDefaultAsync(x => x.UrlHandle == urlHandle);
+        }
+
         public async Task<BlogPost> UpdateAsync(BlogPost blogPost)
         {
             var existingBlogPost = await _quirkDbContext.BlogPosts.Include(x => x.Tags)

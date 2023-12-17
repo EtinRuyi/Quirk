@@ -4,7 +4,7 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="container col-xxl-8 px-4 py-5">
+<div class="container col-xxl-8 py-5">
     <div class="row align-items-center g-5 py-5">
         <div class="col-12 col-lg-6">
             <h1 class="display-5 fw-bold lh-1 mb-3">
@@ -13,12 +13,16 @@
             <p class="lead">
                 Quirk provides leading stories in Tech, real
                 world application and solutions...
-            <p><a href="">Get Started</a></p>
             </p>
+            <p><a href="">Get Started</a></p>
         </div>
 
 
-        <div class="col-12 col-lg-6"></div>
+        <div class="col-12 col-lg-6">
+            <img src="https://cdn.dribbble.com/userupload/4219767/file/original-f239d802ef3c40344d282c348450cb20.gif"
+                 alt="Quirk-Blog" 
+            class="d-block mx-lg-auto img-fluid" width="500"/>
+        </div>
     </div>
 </div>
 
@@ -30,18 +34,21 @@
                 foreach(var blopPost in Model)
                 {
                     <div class="mb-5 bg-light box-shadow p-5">
-                        <a href="#">
+                        <a asp-area=""
+                           asp-controller="Blogs"
+                            asp-action="Index"
+                            asp-route-urlHandle="@blopPost.UrlHandle">
                             <img src="@blopPost.FeaturedImageUrl" alt="@blopPost.Heading"
                                  class="mb-2 d-block img-fluid" />
                         
                             <h2 class="mb-2">@blopPost.Heading</h2>
                             <p class="mb-2">@blopPost.ShortDescription</p>
                         </a>
-                        <p class="mb-2">
-                            @blopPost.Author
-                            <br />
-                            Published Date: @blopPost.PublishedDate.ToShortDateString()
-                        </p>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-secondary">@blopPost.Author</span>
+                            <span class="text-secondary">@blopPost.PublishedDate.ToShortDateString()</span>
+                            
+                        </div>
 
                         <p class="mb-2">
                             @foreach (var tag in blopPost.Tags)
