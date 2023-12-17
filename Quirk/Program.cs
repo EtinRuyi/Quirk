@@ -11,6 +11,7 @@ builder.Services.AddDbContext<QuirkDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("QuirkConnection")));
 builder.Services.AddScoped<ITagRepository, TagRepository >();
 builder.Services.AddScoped<IBlogPostRepository, BlogPostRepository >();
+builder.Services.AddScoped<IImageRepository, ImageRepository>();
 
 var app = builder.Build();
 
