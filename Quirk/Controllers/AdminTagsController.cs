@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Quirk.Models.Domain;
 using Quirk.Models.ViewModels;
@@ -14,7 +15,7 @@ namespace Quirk.Controllers
             _tagRepository = tagRepository;
         }
 
-
+        [Authorize]
         [HttpGet]
         public IActionResult Add()
         {
