@@ -15,7 +15,7 @@ namespace Quirk.Controllers
             _tagRepository = tagRepository;
         }
 
-        [Authorize]
+        [Authorize(Roles ="Admin")]
         [HttpGet]
         public IActionResult Add()
         {
