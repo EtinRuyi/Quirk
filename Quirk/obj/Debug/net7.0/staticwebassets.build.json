@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5IvaiRJWKmUDiXvWiyUOfI3djIikoBpAu2jRXuw988s=",
+  "Hash": "2D/REVOsezKr9ukyjRDOlj3Whv5D6KLY2Eh1T+A1MOY=",
   "Source": "Quirk",
   "BasePath": "_content/Quirk",
   "Mode": "Default",
@@ -1069,6 +1069,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\omoru\\Desktop\\Quirk\\Quirk\\wwwroot\\original-f239d802ef3c40344d282-unscreen.gif",
+      "SourceId": "Quirk",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\omoru\\Desktop\\Quirk\\Quirk\\wwwroot\\",
+      "BasePath": "_content/Quirk",
+      "RelativePath": "original-f239d802ef3c40344d282-unscreen.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\original-f239d802ef3c40344d282-unscreen.gif"
     }
   ]
 }

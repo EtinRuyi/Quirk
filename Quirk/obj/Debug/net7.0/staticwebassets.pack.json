@@ -245,6 +245,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\omoru\\Desktop\\Quirk\\Quirk\\wwwroot\\original-f239d802ef3c40344d282-unscreen.gif",
+      "PackagePath": "staticwebassets\\original-f239d802ef3c40344d282-unscreen.gif"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Quirk.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

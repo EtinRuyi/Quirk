@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Quirk.Models;
+using Quirk.Models.ViewModels;
 using Quirk.Repositories;
 using System.Diagnostics;
 
@@ -9,18 +10,29 @@ namespace Quirk.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IBlogPostRepository _blogPostRepository;
+        private readonly ITagRepository _tagRepository;
 
-        public HomeController(ILogger<HomeController> logger, IBlogPostRepository blogPostRepository)
+        public HomeController(ILogger<HomeController> logger, 
+            IBlogPostRepository blogPostRepository, 
+            ITagRepository tagRepository)
         {
             _logger = logger;
             _blogPostRepository = blogPostRepository;
+            _tagRepository = tagRepository;
         }
 
         public async Task<IActionResult> Index()
         {
             var posts = await _blogPostRepository.GetAllAsync();
+            var tags = await _tagRepository.GetAllAsync();
 
-            return View(posts);
+            var model = new HomeViewModel
+            {
+                BlogPosts = posts,
+                Tags = tags
+            };
+
+            return View(model);
         }
 
         public IActionResult Privacy()
