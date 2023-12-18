@@ -41,9 +41,13 @@ namespace Quirk.Controllers
         }
 
         [HttpGet]
-        public IActionResult Login()
+        public IActionResult Login(string ReturnUrl)
         {
-            return View();
+            var model = new LoginViewModel 
+            {
+                ReturnUrl = ReturnUrl
+            };
+            return View(model);
         }
 
         [HttpPost]
@@ -53,6 +57,10 @@ namespace Quirk.Controllers
                 loginViewModel.Password, false, false);
             if (signIn != null && signIn.Succeeded)
             {
+                if (!string.IsNullOrWhiteSpace(loginViewModel.ReturnUrl))
+                {
+                    return Redirect(loginViewModel.ReturnUrl);
+                }
                 return RedirectToAction("Index", "Home");
             }
             return View();

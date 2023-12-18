@@ -7,6 +7,7 @@ using Quirk.Repositories;
 
 namespace Quirk.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminTagsController : Controller
     {
         private readonly ITagRepository _tagRepository;
@@ -15,7 +16,6 @@ namespace Quirk.Controllers
             _tagRepository = tagRepository;
         }
 
-        [Authorize(Roles ="Admin")]
         [HttpGet]
         public IActionResult Add()
         {
