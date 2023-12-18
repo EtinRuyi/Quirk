@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Quirk.Data;
+using Quirk.Models.Domain;
 
 namespace Quirk.Repositories
 {
@@ -10,6 +11,14 @@ namespace Quirk.Repositories
         {
             _quirkDbContext = quirkDbContext;
         }
+
+        public async Task<BlogPostLike> AddLikeForBlog(BlogPostLike blogPostLike)
+        {
+           await _quirkDbContext.BlogPostLikes.AddAsync(blogPostLike);
+            await _quirkDbContext.SaveChangesAsync();
+            return blogPostLike;
+        }
+
         public async Task<int> GetTotalLikes(string id)
         {
            return await _quirkDbContext.BlogPostLikes
