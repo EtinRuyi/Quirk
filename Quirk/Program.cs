@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Quirk.Data;
 using Quirk.Repositories;
@@ -9,6 +10,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<QuirkDbContext>(options => 
 options.UseSqlServer(builder.Configuration.GetConnectionString("QuirkConnection")));
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<QuirkDbContext>();
 builder.Services.AddScoped<ITagRepository, TagRepository >();
 builder.Services.AddScoped<IBlogPostRepository, BlogPostRepository >();
 builder.Services.AddScoped<IImageRepository, ImageRepository>();
@@ -28,6 +31,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
