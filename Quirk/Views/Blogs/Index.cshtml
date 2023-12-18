@@ -1,4 +1,4 @@
-﻿@model Quirk.Models.Domain.BlogPost
+﻿@model Quirk.Models.ViewModels.BlogDetailsViewModel
 @{
     ViewData["Title"] = Model.PageTitle;
 }
@@ -32,6 +32,14 @@
                     {
                         <span class="badge bg-secondary me-1">@tag.Name</span>
                     }
+                </div>
+
+                <div class="mb-3">
+                    <span>@Model.TotalLikes</span>Likes
+                    @* @foreach (var tag in Model.Tags)
+                    {
+                        <span class="badge bg-secondary me-1">@tag.Name</span>
+                    } *@
                 </div>
             }
             else
