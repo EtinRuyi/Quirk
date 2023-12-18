@@ -7,9 +7,12 @@ namespace Quirk.Controllers
     public class AuthController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
-        public AuthController(UserManager<IdentityUser> userManager)
+        private readonly SignInManager<IdentityUser> _signInManager;
+        public AuthController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
+
         }
         [HttpGet]
         public IActionResult Register()
@@ -33,6 +36,24 @@ namespace Quirk.Controllers
                 {
                     return RedirectToAction("Register");
                 }
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel loginViewModel)
+        {
+            var signIn = await _signInManager.PasswordSignInAsync(loginViewModel.UserName, 
+                loginViewModel.Password, false, false);
+            if (signIn != null && signIn.Succeeded)
+            {
+                return RedirectToAction("Index", "Home");
             }
             return View();
         }
