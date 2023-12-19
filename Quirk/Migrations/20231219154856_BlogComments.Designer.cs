@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Quirk.Data;
 
@@ -11,9 +12,11 @@ using Quirk.Data;
 namespace Quirk.Migrations
 {
     [DbContext(typeof(QuirkDbContext))]
-    partial class QuirkDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231219154856_BlogComments")]
+    partial class BlogComments
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

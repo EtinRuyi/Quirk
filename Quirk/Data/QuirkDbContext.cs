@@ -12,6 +12,7 @@ namespace Quirk.Data
         public DbSet<BlogPost> BlogPosts { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<BlogPostLike> BlogPostLikes { get; set; }
+        public DbSet<BlogComment> Comments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
