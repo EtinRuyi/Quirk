@@ -19,6 +19,12 @@ namespace Quirk.Repositories
             return blogPostLike;
         }
 
+        public async Task<IEnumerable<BlogPostLike>> GetLikesForBlog(string id)
+        {
+           return await _quirkDbContext.BlogPostLikes
+                .Where(x =>  x.BlogPostId == id).ToListAsync();
+        }
+
         public async Task<int> GetTotalLikes(string id)
         {
            return await _quirkDbContext.BlogPostLikes

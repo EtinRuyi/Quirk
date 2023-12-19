@@ -27,5 +27,12 @@ namespace Quirk.Controllers
             await _blogPostLikeRepository.AddLikeForBlog(model);
             return Ok();
         }
+
+        [HttpGet("{blogPostId}/totalLikes")]
+        public async Task<IActionResult> GetTotalLikes([FromBody] string blogPostId)
+        {
+            var totalLikes = await _blogPostLikeRepository.GetTotalLikes(blogPostId);
+            return Ok(totalLikes);
+        }
     }
 }
