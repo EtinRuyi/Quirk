@@ -47,6 +47,18 @@ namespace Quirk.Controllers
                     }
                 }
 
+                var blogComments = await _blogCommentRepository.GetByBlogIdAsync(blogPost.Id);
+                var blogCommentView = new List<BlogCommentsViewModel>();
+                foreach (var blogComment in blogComments)
+                {
+                    blogCommentView.Add(new BlogCommentsViewModel
+                    {
+                        Description = blogComment.Description,
+                        DateAdded = blogComment.DateAdded,
+                        UserName = (await _userManager.FindByIdAsync(blogComment.UserId.ToString())).UserName
+                    });
+                }
+
                 blogDetailsVM = new BlogDetailsViewModel
                 {
                     Id = blogPost.Id,
@@ -62,6 +74,7 @@ namespace Quirk.Controllers
                     Tags = blogPost.Tags,
                     TotalLikes = totalLikes,
                     Liked = liked,
+                    Comments = blogCommentView,
                 };
             }
             return View(blogDetailsVM);
@@ -72,7 +85,7 @@ namespace Quirk.Controllers
         {
             if (_signInManager.IsSignedIn(User))
             {
-                var commentDM = new BlogComment
+                var commentDM = new BlogPostComment
                 {
                     BlogPostId = blogDetailsViewModel.Id,
                     Description = blogDetailsViewModel.CommentDescription,
@@ -80,7 +93,7 @@ namespace Quirk.Controllers
                     DateAdded = DateTime.UtcNow,
                 };
                 await _blogCommentRepository.AddAsync(commentDM);
-                return RedirectToAction("Index", "Home", 
+                return RedirectToAction("Index", "Blogs", 
                     new { urlHandle = blogDetailsViewModel.UrlHandle});
             }
             return View();

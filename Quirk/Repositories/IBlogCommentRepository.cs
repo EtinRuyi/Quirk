@@ -4,6 +4,7 @@ namespace Quirk.Repositories
 {
     public interface IBlogCommentRepository
     {
-        Task<BlogComment> AddAsync(BlogComment blogComment);
+        Task<BlogPostComment> AddAsync(BlogPostComment blogComment);
+        Task<IEnumerable<BlogPostComment>> GetByBlogIdAsync(string blogPostId);
     }
 }

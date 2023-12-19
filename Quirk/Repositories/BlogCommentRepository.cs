@@ -1,4 +1,5 @@
-﻿using Quirk.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Quirk.Data;
 using Quirk.Models.Domain;
 
 namespace Quirk.Repositories
@@ -10,11 +11,18 @@ namespace Quirk.Repositories
         {
             _quirkDbcontext = quirkDbcontext;
         }
-        public async Task<BlogComment> AddAsync(BlogComment blogComment)
+        public async Task<BlogPostComment> AddAsync(BlogPostComment blogComment)
         {
             await _quirkDbcontext.Comments.AddAsync(blogComment);
             await _quirkDbcontext.SaveChangesAsync();
             return blogComment;
+        }
+
+        public async Task<IEnumerable<BlogPostComment>> GetByBlogIdAsync(string blogPostId)
+        {
+            return await _quirkDbcontext.Comments
+                .Where(x => x.BlogPostId == blogPostId)
+                .ToListAsync();
         }
     }
 }
