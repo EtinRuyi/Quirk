@@ -46,6 +46,7 @@ builder.Services.AddScoped<ITagRepository, TagRepository >();
 builder.Services.AddScoped<IBlogPostRepository, BlogPostRepository >();
 builder.Services.AddScoped<IImageRepository, ImageRepository>();
 builder.Services.AddScoped<IBlogPostLikeRepository, BlogPostLikeRepository>();
+builder.Services.AddScoped<IBlogCommentRepository, BlogCommentRepository>();
 
 var app = builder.Build();
 

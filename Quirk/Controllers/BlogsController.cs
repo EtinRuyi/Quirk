@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Quirk.Models.Domain;
 using Quirk.Models.ViewModels;
 using Quirk.Repositories;
 
@@ -9,18 +10,20 @@ namespace Quirk.Controllers
     {
         private readonly IBlogPostRepository _blogPostRepository;
         private readonly IBlogPostLikeRepository _blogLikeRepository;
+        private readonly IBlogCommentRepository _blogCommentRepository;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
         public BlogsController(IBlogPostRepository blogPostRepository, 
             IBlogPostLikeRepository blogLikeRepository,
             SignInManager<IdentityUser> signInManager,
-            UserManager<IdentityUser> userManager)
+            UserManager<IdentityUser> userManager,
+            IBlogCommentRepository blogCommentRepository)
         {
             _blogPostRepository = blogPostRepository;
             _blogLikeRepository = blogLikeRepository;
             _signInManager = signInManager;
             _userManager = userManager;
-
+            _blogCommentRepository = blogCommentRepository;
         }
 
         [HttpGet]
@@ -62,6 +65,26 @@ namespace Quirk.Controllers
                 };
             }
             return View(blogDetailsVM);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Index(BlogDetailsViewModel blogDetailsViewModel)
+        {
+            if (_signInManager.IsSignedIn(User))
+            {
+                var commentDM = new BlogComment
+                {
+                    BlogPostId = blogDetailsViewModel.Id,
+                    Description = blogDetailsViewModel.CommentDescription,
+                    UserId = _userManager.GetUserId(User),
+                    DateAdded = DateTime.UtcNow,
+                };
+                await _blogCommentRepository.AddAsync(commentDM);
+                return RedirectToAction("Index", "Home", 
+                    new { urlHandle = blogDetailsViewModel.UrlHandle});
+            }
+            return View();
+            
         }
     }
 }
