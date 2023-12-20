@@ -100,7 +100,7 @@ namespace Quirk.Controllers
         [HttpGet]
         public IActionResult Login(string ReturnUrl)
         {
-            var model = new LoginViewModel 
+            var model = new LoginViewModel
             {
                 ReturnUrl = ReturnUrl
             };
@@ -110,7 +110,11 @@ namespace Quirk.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel loginViewModel)
         {
-            var signIn = await _signInManager.PasswordSignInAsync(loginViewModel.UserName, 
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            var signIn = await _signInManager.PasswordSignInAsync(loginViewModel.UserName,
                 loginViewModel.Password, false, false);
             if (signIn != null && signIn.Succeeded)
             {
