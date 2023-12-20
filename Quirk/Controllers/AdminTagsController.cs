@@ -26,6 +26,7 @@ namespace Quirk.Controllers
         [ActionName("Add")]
         public async Task<IActionResult> SubmitTag(AddTagRequest addTagRequest)
         {
+            ValidateAddTagRequest(addTagRequest);
             if (ModelState.IsValid == false)
             {
                 return View();
@@ -96,6 +97,17 @@ namespace Quirk.Controllers
                 return RedirectToAction("List");
             }
             return RedirectToAction("Edit", new { Id = editTagRequest.Id });
+        }
+
+        private void ValidateAddTagRequest(AddTagRequest addTagRequest)
+        {
+            if (addTagRequest.Name != null && addTagRequest.DisplayName != null)
+            {
+                if (addTagRequest.Name == addTagRequest.DisplayName)
+                {
+                    ModelState.AddModelError("Names", "Names cannot be the same");
+                }
+            }
         }
     }
 }
