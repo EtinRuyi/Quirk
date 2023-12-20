@@ -20,25 +20,82 @@ namespace Quirk.Controllers
             return View();
         }
 
+
+
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel registerViewModel)
         {
-            var user = new IdentityUser
+            if (ModelState.IsValid)
             {
-                UserName = registerViewModel.UserName,
-                Email = registerViewModel.Email,
-            };
-            var result = await _userManager.CreateAsync(user, registerViewModel.Password);
-            if (result.Succeeded)
-            {
-                var role = await _userManager.AddToRoleAsync(user, "User");
-                if (role.Succeeded)
+                var user = new IdentityUser
                 {
-                    return RedirectToAction("Register");
+                    UserName = registerViewModel.UserName,
+                    Email = registerViewModel.Email,
+                };
+
+                // Check if the password is not null or empty before calling CreateAsync
+                if (!string.IsNullOrEmpty(registerViewModel.Password))
+                {
+                    var result = await _userManager.CreateAsync(user, registerViewModel.Password);
+
+                    if (result.Succeeded)
+                    {
+                        var role = await _userManager.AddToRoleAsync(user, "User");
+
+                        if (role.Succeeded)
+                        {
+                            return RedirectToAction("Register");
+                        }
+                        else
+                        {
+                            // Handle role assignment failure
+                            ModelState.AddModelError(string.Empty, "Failed to assign role to the user.");
+                        }
+                    }
+                    else
+                    {
+                        // Handle user creation failure
+                        foreach (var error in result.Errors)
+                        {
+                            ModelState.AddModelError(string.Empty, error.Description);
+                        }
+                    }
+                }
+                else
+                {
+                    // Handle case where password is null or empty
+                    ModelState.AddModelError(nameof(registerViewModel.Password), "Password cannot be null or empty.");
                 }
             }
+
+            // If ModelState is not valid or there was an issue with user creation, return to the view with errors
             return View();
         }
+
+
+
+        //[HttpPost]
+        //public async Task<IActionResult> Register(RegisterViewModel registerViewModel)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        var user = new IdentityUser
+        //        {
+        //            UserName = registerViewModel.UserName,
+        //            Email = registerViewModel.Email,
+        //        };
+        //        var result = await _userManager.CreateAsync(user, registerViewModel.Password);
+        //        if (result.Succeeded)
+        //        {
+        //            var role = await _userManager.AddToRoleAsync(user, "User");
+        //            if (role.Succeeded)
+        //            {
+        //                return RedirectToAction("Register");
+        //            }
+        //        }
+        //    }
+        //    return View();
+        //}
 
         [HttpGet]
         public IActionResult Login(string ReturnUrl)
