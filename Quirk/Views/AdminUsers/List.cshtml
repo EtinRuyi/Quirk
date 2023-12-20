@@ -36,19 +36,16 @@
                             <td>@user.Id</td>
                             <td>@user.UserName</td>
                             <td>@user.Email</td>
-                            @* <td>
-                    <div class="d-flex">
-                    @foreach (var tag in blogPost.Tags)
-                    {
-                    <span class="badge bg-secondary me-1">@tag.Name</span>
-                    }
-                    </div>
-                    </td>
-                    <td>
-                    <a asp-area="" asp-controller="AdminBlogPost"
-                    asp-action="Edit"
-                    asp-route-id="@blogPost.Id">Edit</a>
-                    </td> *@
+                            <td>
+                               <form method="post" 
+                                   asp-controller="AdminUsers" 
+                                   asp-action="Delete" 
+                                   asp-route-id="@user.Id">
+                                   <button class="btn btn-danger" type="submit">Delete</button>
+                               </form> 
+                            </td>
+                            <td>
+                            </td>
                         </tr>
                     }
                 </tbody>

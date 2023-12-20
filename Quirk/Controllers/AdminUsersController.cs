@@ -64,5 +64,21 @@ namespace Quirk.Controllers
             }
             return View();
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(string id)
+        {
+           var user = await _userManager.FindByIdAsync(id.ToString());
+            if (user != null)
+            {
+               var deletedUser =  await _userManager.DeleteAsync(user);
+                if (deletedUser != null && deletedUser.Succeeded)
+                {
+                    return RedirectToAction("List", "AdminUsers");
+                }
+            }
+            return View();
+        }
     }
 }
