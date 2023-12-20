@@ -26,6 +26,10 @@ namespace Quirk.Controllers
         [ActionName("Add")]
         public async Task<IActionResult> SubmitTag(AddTagRequest addTagRequest)
         {
+            if (ModelState.IsValid == false)
+            {
+                return View();
+            }
             var tag = new Tag
             {
                 Name = addTagRequest.Name,
