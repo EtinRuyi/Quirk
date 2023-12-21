@@ -1,42 +1,49 @@
-﻿@model Quirk.Models.ViewModels.HomeViewModel
+﻿@using Microsoft.AspNetCore.Identity;
+@model Quirk.Models.ViewModels.HomeViewModel
+@inject SignInManager<IdentityUser> _signManager
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Quirk";
 }
 
-<div class="container col-xxl-8 py-5">
-    <div class="row align-items-center g-5 py-5">
-        <div class="col-12 col-lg-6">
-            <h1 class="display-5 fw-bold lh-1 mb-3">
-                Quirk - Tech Stories and Ideas.
-            </h1>
-            <p class="lead">
-                Quirk provides leading stories in Tech, real
-                world application and solutions...
-            </p>
-            <p>
-                <a class=" btn me-3 bg-dark text-white"
-                   asp-area=""
-                   asp-controller="Auth"
-                   asp-action="Register">
-                    Get Started
-                </a>
-            </p>
-        </div>
 
 
-        <div class="col-12 col-lg-6">
-            <img src="~/original-f239d802ef3c40344d282-unscreen.gif"
-                 alt="Quirk-Blog" 
-            class="d-block mx-lg-auto img-fluid" width="500"/>
+
+
+@if (!_signManager.IsSignedIn(User))
+{
+    <div class="container col-xxl-8 py-5">
+        <div class="row align-items-center g-5 py-5">
+            <div class="col-12 col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">
+                    <strong>Quirk - Tech Stories and Ideas.</strong>
+                </h1>
+                <p class="lead">
+                    <strong>Quirk provides leading stories in Tech, real world application, and solutions...</strong>
+                </p>
+                <p>
+                    <a class="btn me-3 bg-dark text-white rounded-pill"
+                       asp-area=""
+                       asp-controller="Auth"
+                       asp-action="Register">
+                        Get Started
+                    </a>
+                </p>
+            </div>
+            <div class="col-12 col-lg-6 d-none d-lg-block">
+                <img src="~/original-f239d802ef3c40344d282-unscreen.gif"
+                     alt="Quirk-Blog"
+                     class="d-block mx-lg-auto img-fluid" width="500" />
+            </div>
         </div>
     </div>
-</div>
+}
+
 
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row">
         <div class="col-6 d-flex">
-            @if (Model != null && Model.Tags.Any())
+            @if (_signManager.IsSignedIn(User) && Model != null && Model.Tags.Any())
             {
                 @foreach (var tag in Model.Tags)
                 {
@@ -47,28 +54,29 @@
     </div>
 </div>
 
+
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-6">
-            @if (Model != null && Model.BlogPosts.Any())
+    <div class="row">
+        @if (Model != null && Model.BlogPosts.Any())
+        {
+            @foreach (var blopPost in Model.BlogPosts)
             {
-                foreach(var blopPost in Model.BlogPosts)
-                {
-                    <div class="mb-5 bg-light box-shadow p-5">
-                        <a asp-area=""
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-5">
+                    <!-- Adjust column classes for responsiveness -->
+                    <div class="mb-5 p-5">
+                        <a class="text-decoration-none text-dark" asp-area=""
                            asp-controller="Blogs"
-                            asp-action="Index"
-                            asp-route-urlHandle="@blopPost.UrlHandle">
+                           asp-action="Index"
+                           asp-route-urlHandle="@blopPost.UrlHandle">
                             <img src="@blopPost.FeaturedImageUrl" alt="@blopPost.Heading"
-                                 class="mb-2 d-block img-fluid" />
-                        
-                            <h2 class="mb-2">@blopPost.Heading</h2>
+                                 class="mb-2 d-block img-fluid " />
+
+                            <h5 class="mb-2"><strong>@blopPost.Heading</strong></h5>
                             <p class="mb-2">@blopPost.ShortDescription</p>
                         </a>
                         <div class="d-flex justify-content-between mb-2">
                             <span class="text-secondary">@blopPost.Author</span>
                             <span class="text-secondary">@blopPost.PublishedDate.ToShortDateString()</span>
-                            
                         </div>
 
                         <p class="mb-2">
@@ -77,11 +85,9 @@
                                 <span class="badge bg-secondary me-1">@tag.Name</span>
                             }
                         </p>
-                        <a class="btn btn-dark" href="#">Read More</a>
-                        
                     </div>
-                }
+                </div>
             }
-        </div>
+        }
     </div>
 </div>

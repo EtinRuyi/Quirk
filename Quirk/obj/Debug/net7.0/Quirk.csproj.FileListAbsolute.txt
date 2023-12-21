@@ -16,7 +16,11 @@ C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Quirk.dll
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Quirk.pdb
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Azure.Core.dll
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Azure.Identity.dll
+C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\CloudinaryDotNet.dll
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Humanizer.dll
+C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
@@ -25,6 +29,9 @@ C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.EntityFrameworkCor
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.Identity.Client.dll
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
@@ -36,6 +43,7 @@ C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.IdentityModel.Toke
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\System.CodeDom.dll
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\System.Drawing.Common.dll
@@ -73,11 +81,3 @@ C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\refint\Quirk.dll
 C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\Quirk.pdb
 C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\Quirk.genruntimeconfig.cache
 C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\ref\Quirk.dll
-C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\CloudinaryDotNet.dll
-C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Newtonsoft.Json.dll
-C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
-C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Microsoft.Extensions.Options.dll

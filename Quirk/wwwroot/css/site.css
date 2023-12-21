@@ -25,3 +25,13 @@ body {
     max-width: 100%;
 
 }
+
+.body-with-fixed-navbar {
+    padding-top: 56px; 
+}
+
+.blog-post-heading,
+.blog-post-description {
+    color: black;
+    text-decoration: none;
+}
