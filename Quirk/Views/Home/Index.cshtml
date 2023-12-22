@@ -12,7 +12,7 @@
 
 @if (!_signManager.IsSignedIn(User))
 {
-    <div class="container col-xxl-8 py-5">
+    <div class="container col-xxl-8 py-5 bg-opacity-100">
         <div class="row align-items-center g-5 py-5">
             <div class="col-12 col-lg-6">
                 <h1 class="display-5 fw-bold lh-1 mb-3">
@@ -89,5 +89,47 @@
                 </div>
             }
         }
+    </div>
+</div>
+
+
+
+<div class="bg-light">
+    <div class="container">
+        <div class="mb-5 mt-5"><h4><strong>Recommended from Quirk</strong></h4></div>
+        <div class="row">
+            @if (Model != null && Model.BlogPosts.Any())
+            {
+                @foreach (var blopPost in Model.BlogPosts)
+                {
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-5">
+                        <!-- Adjust column classes for responsiveness -->
+                        <div class="mb-5 p-5">
+                            <a class="text-decoration-none text-dark" asp-area=""
+                               asp-controller="Blogs"
+                               asp-action="Index"
+                               asp-route-urlHandle="@blopPost.UrlHandle">
+                                <img src="@blopPost.FeaturedImageUrl" alt="@blopPost.Heading"
+                                     class="mb-2 d-block img-fluid " />
+
+                                <h5 class="mb-2"><strong>@blopPost.Heading</strong></h5>
+                                <p class="mb-2">@blopPost.ShortDescription</p>
+                            </a>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-secondary">@blopPost.Author</span>
+                                <span class="text-secondary">@blopPost.PublishedDate.ToShortDateString()</span>
+                            </div>
+
+                            <p class="mb-2">
+                                @foreach (var tag in blopPost.Tags)
+                                {
+                                    <span class="badge bg-secondary me-1">@tag.Name</span>
+                                }
+                            </p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
     </div>
 </div>
