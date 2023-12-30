@@ -14,10 +14,28 @@
 
     <link href='https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
     <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js'></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var navbar = document.querySelector('.navbar');
+            var getStartedButton = document.querySelector('.btn');
+
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('navbar-scrolled');
+                    getStartedButton.classList.add('btn-get-started-scrolled');
+                } else {
+                    navbar.classList.remove('navbar-scrolled');
+                    getStartedButton.classList.remove('btn-get-started-scrolled');
+                }
+            });
+        });
+    </script>
 </head>
+
 <body class="body-with-fixed-navbar">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow fixed-top">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-yellow border-bottom box-shadow fixed-top">
+
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                     <h1><strong>Quirk</strong></h1>
@@ -29,7 +47,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         @* <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li> *@
 
                         @if (_signManager.IsSignedIn(User) && User.IsInRole("Admin"))
@@ -91,7 +109,7 @@
                         @if (_signManager.IsSignedIn(User))
                         {
                             <div class="me-3 text-black">
-                               @User?.Identity?.Name
+                                @User?.Identity?.Name
                             </div>
                             <a class="me-3 text-black text-decoration-none"
                                asp-area=""
@@ -109,14 +127,14 @@
                                 Sign in
                             </a>
 
-                            <a class=" btn me-3 bg-dark text-white rounded-pill"
+                            <a class="btn me-3 bg-dark text-white rounded-pill"
                                asp-area=""
                                asp-controller="Auth"
                                asp-action="Register">
                                 Get Started
                             </a>
                         }
-                        
+
                     </div>
                 </div>
             </div>

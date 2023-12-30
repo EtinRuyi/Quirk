@@ -12,31 +12,35 @@
 
 @if (!_signManager.IsSignedIn(User))
 {
-    <div class="container col-xxl-8 py-5 bg-opacity-100">
-        <div class="row align-items-center g-5 py-5">
-            <div class="col-12 col-lg-6">
-                <h1 class="display-5 fw-bold lh-1 mb-3">
-                    <strong>Quirk - Tech Stories and Ideas.</strong>
-                </h1>
-                <p class="lead">
-                    <strong>Quirk provides leading stories in Tech, real world application, and solutions...</strong>
-                </p>
-                <p>
-                    <a class="btn me-3 bg-dark text-white rounded-pill"
-                       asp-area=""
-                       asp-controller="Auth"
-                       asp-action="Register">
-                        Get Started
-                    </a>
-                </p>
-            </div>
-            <div class="col-12 col-lg-6 d-none d-lg-block">
-                <img src="~/original-f239d802ef3c40344d282-unscreen.gif"
-                     alt="Quirk-Blog"
-                     class="d-block mx-lg-auto img-fluid" width="500" />
+    <div class="section-yellow">
+        <div class="container py-5">
+            <div class="row align-items-center g-5 py-5">
+                <div class="col-12 col-lg-6">
+                    <h1 class="display-5 fw-bold lh-1 mb-3">
+                        <strong>Quirk - Tech Stories and Ideas.</strong>
+                    </h1>
+                    <p class="lead">
+                        <strong>Quirk provides leading stories in Tech, real world application, and solutions...</strong>
+                    </p>
+                    <p>
+                        <a class="btn me-3 bg-dark text-white rounded-pill"
+                           asp-area=""
+                           asp-controller="Auth"
+                           asp-action="Register">
+                            Start Reading...
+                        </a>
+                    </p>
+                </div>
+                <div class="col-12 col-lg-6 d-none d-lg-block">
+                    <img src="~/original-f239d802ef3c40344d282-unscreen.gif"
+                         alt="Quirk-Blog"
+                         class="d-block mx-lg-auto img-fluid" width="500" />
+                </div>
             </div>
         </div>
     </div>
+    //<hr class="my-4">
+    <hr class="my-0 border-dark">
 }
 
 
@@ -95,6 +99,8 @@
 
 
 <div class="bg-light">
+    @* <hr class="my-4"> *@
+    <hr class="my-0 border-dark">
     <div class="container">
         <div class="mb-5 mt-5"><h4><strong>Recommended from Quirk</strong></h4></div>
         <div class="row">
