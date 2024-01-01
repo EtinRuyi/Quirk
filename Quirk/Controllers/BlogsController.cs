@@ -49,6 +49,7 @@ namespace Quirk.Controllers
 
                 var blogComments = await _blogCommentRepository.GetByBlogIdAsync(blogPost.Id);
                 var blogCommentView = new List<BlogCommentsViewModel>();
+                var posts = await _blogPostRepository.GetAllAsync();
                 foreach (var blogComment in blogComments)
                 {
                     blogCommentView.Add(new BlogCommentsViewModel
@@ -75,6 +76,7 @@ namespace Quirk.Controllers
                     TotalLikes = totalLikes,
                     Liked = liked,
                     Comments = blogCommentView,
+                    BlogPosts = posts,
                 };
             }
             return View(blogDetailsVM);
