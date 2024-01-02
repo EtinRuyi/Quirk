@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "h7iQRkUsHuYDzR18S9tJDhjAQ9VrwZ1yWaClY6EwIpEQ9mZGgM3oGXLmkINJl19V8Vjn9zuV5SxSs2uhrAgb1Q==",
+  "dgSpecHash": "zIZ5W3qBrWfeS4y30SGSfcIPoMmxrpWLb2cIRVt+R072VUHd2F61VUWJlvbjAwbXa6KqvNFhj8gF4NWPy9ArXQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\omoru\\Desktop\\Quirk\\Quirk\\Quirk.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\omoru\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\omoru\\.nuget\\packages\\cloudinarydotnet\\1.24.0\\cloudinarydotnet.1.24.0.nupkg.sha512",
     "C:\\Users\\omoru\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\omoru\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\7.0.1\\microsoft.aspnetcore.authentication.google.7.0.1.nupkg.sha512",
     "C:\\Users\\omoru\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.3\\microsoft.aspnetcore.cryptography.internal.7.0.3.nupkg.sha512",
     "C:\\Users\\omoru\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.3\\microsoft.aspnetcore.cryptography.keyderivation.7.0.3.nupkg.sha512",
     "C:\\Users\\omoru\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

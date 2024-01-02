@@ -9,6 +9,7 @@
       "Quirk/1.0.0": {
         "dependencies": {
           "CloudinaryDotNet": "1.24.0",
+          "Microsoft.AspNetCore.Authentication.Google": "7.0.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.5",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.5"
@@ -70,6 +71,14 @@
           "lib/net6.0/Humanizer.dll": {
             "assemblyVersion": "2.14.0.0",
             "fileVersion": "2.14.1.48190"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Google/7.0.1": {
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "assemblyVersion": "7.0.1.0",
+            "fileVersion": "7.0.122.56809"
           }
         }
       },
@@ -1055,6 +1064,13 @@
       "sha512": "sha512-lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Google/7.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uAQfuf9r15HVcFNNhmY6X9cvhKP19F7NPuoYaOWA1qRqDWsmv/vy7XPMM2WXhHL+uwOAbgsnYIsQKfY9GvDY+g==",
+      "path": "microsoft.aspnetcore.authentication.google/7.0.1",
+      "hashPath": "microsoft.aspnetcore.authentication.google.7.0.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/7.0.3": {
       "type": "package",

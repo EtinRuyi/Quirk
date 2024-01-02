@@ -16,5 +16,6 @@ namespace Quirk.Models.ViewModels
             "Password must be at least 6 alpha-numeric " +
             "and one special character")]
         public string Password { get; set; }
+        public string? ReturnUrl { get; set; }
     }
 }

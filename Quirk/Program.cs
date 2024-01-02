@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Quirk.Data;
@@ -11,17 +13,28 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<QuirkDbContext>(options => 
 options.UseSqlServer(builder.Configuration.GetConnectionString("QuirkConnection")));
 
-//builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-//    .AddEntityFrameworkStores<QuirkDbContext>();
-//builder.Services.Configure<IdentityOptions>(options =>
+//builder.Services.AddAuthentication(options =>
 //{
-//    options.Password.RequireDigit = true;
-//    options.Password.RequireLowercase = true;
-//    options.Password.RequireUppercase = true;
-//    options.Password.RequireNonAlphanumeric = true;
-//    options.Password.RequiredLength = 6;
-//    options.Password.RequiredUniqueChars = 1;
+//    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+//    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+//}).AddCookie().AddGoogle(GoogleDefaults.AuthenticationScheme, options =>
+//{
+//    options.ClientId = builder.Configuration.GetSection("GoogleKeys:ClientId").Value;
+//    options.ClientSecret = builder.Configuration.GetSection("GoogleKeys:ClientSecret").Value;
 //});
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme; // Include Google authentication
+})
+.AddCookie()
+.AddGoogle(GoogleDefaults.AuthenticationScheme, options =>
+{
+    options.ClientId = builder.Configuration.GetSection("GoogleKeys:ClientId").Value;
+    options.ClientSecret = builder.Configuration.GetSection("GoogleKeys:ClientSecret").Value;
+});
+
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 {
