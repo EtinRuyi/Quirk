@@ -55,7 +55,6 @@
                 @foreach (var blogPost in Model.BlogPosts.Take(6))
                 {
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <!-- Adjust column classes for responsiveness -->
                         <div class="p-5">
                             <div class="d-flex justify-content-between mb-2">
                                 <span class="text-secondary">@blogPost.Author</span>
@@ -109,7 +108,6 @@
             @foreach (var blopPost in Model.BlogPosts)
             {
                 <div class="col-lg-4 col-md-6 col-sm-12">
-                    <!-- Adjust column classes for responsiveness -->
                     <div class="p-5">
                         <a class="text-decoration-none text-dark" asp-area=""
                            asp-controller="Blogs"
@@ -151,7 +149,6 @@
                 @foreach (var blogPost in Model.BlogPosts.TakeLast(2).Reverse())
                 {
                     <div class="col-lg-6 col-md-6 col-sm-12">
-                        <!-- Adjust column classes for responsiveness -->
                         <div class="p-5">
                             <a class="text-decoration-none text-dark" asp-area=""
                                asp-controller="Blogs"
