@@ -1,3 +1,11 @@
+C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\Quirk.csproj.AssemblyReference.cache
+C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\Quirk.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\Quirk.AssemblyInfoInputs.cache
+C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\Quirk.AssemblyInfo.cs
+C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\Quirk.csproj.CoreCompileInputs.cache
+C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\Quirk.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\Quirk.RazorAssemblyInfo.cache
+C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\Quirk.RazorAssemblyInfo.cs
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\appsettings.json
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\Quirk.staticwebassets.runtime.json
@@ -58,14 +66,6 @@ C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\omoru\Desktop\Quirk\Quirk\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\Quirk.csproj.AssemblyReference.cache
-C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\Quirk.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\Quirk.AssemblyInfoInputs.cache
-C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\Quirk.AssemblyInfo.cs
-C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\Quirk.csproj.CoreCompileInputs.cache
-C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\Quirk.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\Quirk.RazorAssemblyInfo.cache
-C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\Quirk.RazorAssemblyInfo.cs
 C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\staticwebassets\msbuild.Quirk.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\staticwebassets\msbuild.build.Quirk.props
 C:\Users\omoru\Desktop\Quirk\Quirk\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Quirk.props
