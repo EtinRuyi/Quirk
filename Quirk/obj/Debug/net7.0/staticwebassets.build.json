@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xfz6zOo2m0c+M5/tkVNBB+AgxkMKNwySFY0vP+VUZ+s=",
+  "Hash": "B0Xt/yavD8fTrqMjBak0Vtnd+l9F2Mo0Tyj+pEbUMNM=",
   "Source": "Quirk",
   "BasePath": "_content/Quirk",
   "Mode": "Default",
@@ -85,12 +85,12 @@
       "OriginalItemSpec": "wwwroot\\facebook.png"
     },
     {
-      "Identity": "C:\\Users\\omoru\\Desktop\\Quirk\\Quirk\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\omoru\\Desktop\\Quirk\\Quirk\\wwwroot\\favicon-32x32.png",
       "SourceId": "Quirk",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\omoru\\Desktop\\Quirk\\Quirk\\wwwroot\\",
       "BasePath": "_content/Quirk",
-      "RelativePath": "favicon.ico",
+      "RelativePath": "favicon-32x32.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -99,7 +99,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon.ico"
+      "OriginalItemSpec": "wwwroot\\favicon-32x32.png"
     },
     {
       "Identity": "C:\\Users\\omoru\\Desktop\\Quirk\\Quirk\\wwwroot\\google.png",
@@ -1120,23 +1120,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\original-f239d802ef3c40344d282-unscreen.gif"
-    },
-    {
-      "Identity": "C:\\Users\\omoru\\Desktop\\Quirk\\Quirk\\wwwroot\\quirk-logo.png",
-      "SourceId": "Quirk",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\omoru\\Desktop\\Quirk\\Quirk\\wwwroot\\",
-      "BasePath": "_content/Quirk",
-      "RelativePath": "quirk-logo.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\quirk-logo.png"
     },
     {
       "Identity": "C:\\Users\\omoru\\Desktop\\Quirk\\Quirk\\wwwroot\\Xlogo.png",

@@ -17,8 +17,8 @@
       "PackagePath": "staticwebassets\\facebook.png"
     },
     {
-      "Id": "C:\\Users\\omoru\\Desktop\\Quirk\\Quirk\\wwwroot\\favicon.ico",
-      "PackagePath": "staticwebassets\\favicon.ico"
+      "Id": "C:\\Users\\omoru\\Desktop\\Quirk\\Quirk\\wwwroot\\favicon-32x32.png",
+      "PackagePath": "staticwebassets\\favicon-32x32.png"
     },
     {
       "Id": "C:\\Users\\omoru\\Desktop\\Quirk\\Quirk\\wwwroot\\google.png",
@@ -259,10 +259,6 @@
     {
       "Id": "C:\\Users\\omoru\\Desktop\\Quirk\\Quirk\\wwwroot\\original-f239d802ef3c40344d282-unscreen.gif",
       "PackagePath": "staticwebassets\\original-f239d802ef3c40344d282-unscreen.gif"
-    },
-    {
-      "Id": "C:\\Users\\omoru\\Desktop\\Quirk\\Quirk\\wwwroot\\quirk-logo.png",
-      "PackagePath": "staticwebassets\\quirk-logo.png"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Quirk.Microsoft.AspNetCore.StaticWebAssets.props",
