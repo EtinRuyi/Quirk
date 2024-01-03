@@ -58,3 +58,24 @@ body {
 .section-yellow {
     background-color: #ddbb2c;
 }
+
+.form-style {
+    width: 500px;
+    padding: 50px;
+    margin: auto;
+    background-color: white;
+}
+
+
+@media screen and (max-width: 600px) {
+    .form-style {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+
+.custom-btn {
+    width: 100%;
+    font-size: 20px;
+}
