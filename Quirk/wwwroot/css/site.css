@@ -38,11 +38,20 @@ body {
 
 .navbar {
     background-color: #ddbb2c !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar-scrolled {
     background-color: white !important;
     transition: background-color 1.9s ease;
+}
+
+.navbar-logged-in {
+    width: 100%;
+    background-color: white;
 }
 
 .btn {
