@@ -41,6 +41,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
+    height: 100px;
     z-index: 1000;
 }
 
@@ -88,3 +89,24 @@ body {
     width: 100%;
     font-size: 20px;
 }
+
+body.logged-in {
+    margin-top: -56px;
+}
+
+body.logged-in .navbar {
+    position: static;
+    background-color: white;
+    transition: none;
+    height: 100px;
+}
+
+body.logged-in .body-with-fixed-navbar {
+    padding-top: 0;
+}
+
+body.logged-in .navbar-scrolled {
+    background-color: white;
+    transition: none;
+}
+
