@@ -1,4 +1,5 @@
 Quirk - Personal Blog Site
+
 Quirk is a dynamic and feature-rich personal blog site that provides a platform for users to share their thoughts, insights, and experiences with the world. It is designed with a clean and modern user interface to ensure an enjoyable reading experience for visitors.
 
 Technologies Used
