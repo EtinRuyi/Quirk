@@ -47,8 +47,7 @@ namespace Quirk.Controllers
 
             var selectedTag = new List<Tag>();
             foreach (var selectedTagId in addBlogPostRequest.SelectedTags)
-            {
-                //var selectedTagIdAsGuid = Guid.Parse(selectedTagId);    
+            { 
                 var existingTag = await _tagRepository.GetAsync(selectedTagId);
                 if (existingTag != null)
                 {
@@ -118,14 +117,11 @@ namespace Quirk.Controllers
             var selectedTags = new List<Tag>();
             foreach (var selectedTag in editBlogPostRequest.SelectedTags)
             {
-                //if (Guid.TryParse(selectedTag, out var tag))
-                //{
                     var foundTag = await _tagRepository.GetAsync(selectedTag);
                     if (foundTag != null)
                     {
                         selectedTags.Add(foundTag);
                     }
-                //}
             }
             blogPost.Tags = selectedTags;
             var updatedBlog =  await _blogPostRepository.UpdateAsync(blogPost);

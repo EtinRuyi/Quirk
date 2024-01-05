@@ -77,14 +77,9 @@ namespace Quirk.Controllers
                 DisplayName = editTagRequest.DisplayName
             };
             var updatedTag = await _tagRepository.UpdateAsync(tag);
-            if (updatedTag != null)
-            {
+            if (updatedTag != null){}
+            else{}
 
-            }
-            else
-            {
-
-            }
             return RedirectToAction("Edit", new {id = editTagRequest.Id});
         }
 
