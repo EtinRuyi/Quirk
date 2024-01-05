@@ -52,7 +52,8 @@ body {
 
 .navbar-logged-in {
     width: 100%;
-    background-color: white;
+    background-color: white !important;
+    transition: none;
 }
 
 .btn {
@@ -96,7 +97,7 @@ body.logged-in {
 
 body.logged-in .navbar {
     position: static;
-    background-color: white;
+    background-color: white !important;
     transition: none;
     height: 100px;
 }
@@ -106,7 +107,12 @@ body.logged-in .body-with-fixed-navbar {
 }
 
 body.logged-in .navbar-scrolled {
-    background-color: white;
+    background-color: white !important;
+    transition: none;
+}
+
+.navbar-logged-in {
+    background-color: white !important;
     transition: none;
 }
 
